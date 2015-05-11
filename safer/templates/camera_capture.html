@@ -41,6 +41,30 @@
 		});
 
 	}, false);
+    
+//random choose a facial expression image to show.
+    function ShowDemo()
+   {
+       var total = 4;
+       var n = Math.floor(Math.random()*total + 1);
+
+       switch(n)
+       {
+           case 1:
+               x = "smile.jpeg";
+               break;
+           case 2:
+               x = "fear.jpeg";
+               break;
+           case 3:
+               x = "sad.jpeg";
+               break;
+           case 4:
+               x = "angry.png";
+               break;
+       }
+       document.getElementById("demo").src = "/static/images/" + x;
+   }
   </script>
  </head>
 
@@ -56,6 +80,8 @@
 	client supports video/camera, but for the sake of illustrating the 
 	elements involved, they are created with markup (not JavaScript)
 		-->
+        <img id="demo" src="/static/images/ori.gif">
+        <button onclick="ShowDemo()">click me</button>
 		<video id="video" width="640" height="480" autoplay></video>
 		<button id="snap">Snap Photo</button>
 		<canvas id="canvas" width="640" height="480"></canvas>
